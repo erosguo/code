@@ -15,3 +15,20 @@ function longestConsecutive(nums: number[]): number {
     })
     return result;
 };
+
+
+function longestConsecutive1(nums: number[]): number {
+    const numsSet = new Set(nums);
+    let result = 0;
+    const numsList = [...numsSet].sort((a,b)=>a-b);
+    for(let i=numsList.length-1,tempResult = 1;i>=0;i--){
+        const num = numsList[i];
+        if(numsSet.has(num-1)){
+            tempResult++;
+        }else{
+            result = result>tempResult?result:tempResult;
+            tempResult=1;
+        }
+    }
+    return result;
+};
