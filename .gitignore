@@ -18,6 +18,9 @@ ollama/
 .DS_Store
 Thumbs.db
 
+# IDE
+.idea/
+
 # Java
 *.class
 
